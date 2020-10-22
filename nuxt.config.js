@@ -14,10 +14,10 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [],
+  css: ['@/assets/scss/main.scss'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [],
+  plugins: [{ src: '~/plugins/axios', ssr: false }],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -26,6 +26,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+    ['@nuxtjs/dotenv'],
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -34,11 +35,29 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/axios',
+    '@nuxtjs/dotenv',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {},
+  axios: {
+    debug: false,
+    proxy: true,
+    credentials: true,
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
+  /*
+   ** Server configuration
+   */
+  server: {
+    port: 9500, // default: 3000
+    host: '0.0.0.0', // default: localhost,
+    timing: {
+      total: true,
+    },
+  },
+
+  proxy: { '/api/': 'http://lapi.transitchicago.com/' },
 }

@@ -1,0 +1,19 @@
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
+.text-center {
+  text-align: center;
+}
+h2 {
+  padding: 2rem;
+}
+table {
+  width: 600px;
+  margin: 0 auto;
+  border: 1px solid rgb(102, 99, 99);
+  td,
+  th {
+    border: 1px solid rgb(90, 89, 89);
+  }
+}
