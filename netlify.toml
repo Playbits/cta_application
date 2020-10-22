@@ -1,6 +1,4 @@
 [context.production]
 command = 'yarn generate'
 publish = 'dist/'
-[context.production.environment]
-BASE_URL = 'http://lapi.transitchicago.com/'
-api_key = 'e22345c93ad34bad94edbc2a46fa90ad'
+environment =  { BASE_URL = 'http://lapi.transitchicago.com/',api_key = 'e22345c93ad34bad94edbc2a46fa90ad'}
