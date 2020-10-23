@@ -1,25 +1,33 @@
 <template>
   <div class="container">
-    <nuxt-link to="/">Home</nuxt-link>
-    <h2 class="text-center">
-      Showing all train Stops and arrival for {{ train_arrivals[0].staNm }}
-    </h2>
-    <table>
-      <thead>
-        <th>SN</th>
-        <th>Destination</th>
-        <th>Stop Description</th>
-        <th>Arrival time</th>
-      </thead>
-      <tbody>
-        <tr v-for="(arrival, i) in train_arrivals" :key="arrival.stpId">
-          <td>{{ i + 1 }}</td>
-          <td>{{ arrival.destNm }}</td>
-          <td>{{ arrival.stpDe }}</td>
-          <td>{{ arrival.arrT }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <b-row>
+      <b-col lg="12" class="mt-3">
+        <nuxt-link to="/">Home</nuxt-link>
+        <hr />
+      </b-col>
+
+      <b-col lg="12">
+        <h2 class="text-center">
+          Showing all train Stops and arrival for {{ train_arrivals[0].staNm }}
+        </h2>
+        <table class="table table-bordered table-striped table-hover">
+          <thead>
+            <th>SN</th>
+            <th>Destination</th>
+            <th>Stop Description</th>
+            <th>Arrival time</th>
+          </thead>
+          <tbody>
+            <tr v-for="(arrival, i) in train_arrivals" :key="arrival.stpId">
+              <td>{{ i + 1 }}</td>
+              <td>{{ arrival.destNm }}</td>
+              <td>{{ arrival.stpDe }}</td>
+              <td>{{ arrival.arrT }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </b-col>
+    </b-row>
   </div>
 </template>
 <script>
