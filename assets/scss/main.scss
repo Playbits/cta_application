@@ -1,19 +1,32 @@
-.container {
-  width: 800px;
-  margin: 0 auto;
-}
-.text-center {
-  text-align: center;
-}
-h2 {
-  padding: 2rem;
-}
-table {
-  width: 600px;
-  margin: 0 auto;
-  border: 1px solid rgb(102, 99, 99);
-  td,
-  th {
-    border: 1px solid rgb(90, 89, 89);
-  }
-}
+// .container {
+//   width: 800px;
+//   margin: 0 auto;
+// }
+// .text-center {
+//   text-align: center;
+// }
+// h2 {
+//   padding: 2rem;
+// }
+// table {
+//   width: 600px;
+//   margin: 0 auto;
+//   border: 1px solid rgb(102, 99, 99);
+//   td,
+//   th {
+//     border: 1px solid rgb(90, 89, 89);
+//   }
+// }
+// Custom Bootstrap variable overrides go first
+$grid-breakpoints: (
+  xs: 0,
+  sm: 480px,
+  md: 640px,
+  lg: 992px,
+  xl: 1300px
+);
+$enable-rounded: false;
+
+// Then include the following
+@import 'bootstrap/scss/bootstrap.scss';
+@import 'bootstrap-vue/src/index.scss';

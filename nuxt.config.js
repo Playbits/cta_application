@@ -12,7 +12,10 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
-
+  bootstrapVue: {
+    bootstrapCSS: false, // Or `css: false`
+    bootstrapVueCSS: false // Or `bvCSS: false`
+  },
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: ['@/assets/scss/main.scss'],
 
@@ -37,6 +40,7 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
+    'bootstrap-vue/nuxt'
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
