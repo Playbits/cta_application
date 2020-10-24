@@ -14,10 +14,10 @@
       </b-col>
       <div>
         <normal-table
-          :stations="stations"
           v-if="table_mode === 'normal'"
+          :stations="stations"
         ></normal-table>
-        <bootstrap-table :stations="stations" v-if="table_mode === 'bootstrap'">
+        <bootstrap-table v-if="table_mode === 'bootstrap'" :stations="stations">
         </bootstrap-table>
       </div>
     </b-row>

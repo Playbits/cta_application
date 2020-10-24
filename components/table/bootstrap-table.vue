@@ -3,7 +3,7 @@
     <b-col lg="6">
       <b-pagination
         v-model="currentPage"
-        :total-rows="table_rows"
+        :total-rows="rows"
         :per-page="perPage"
         aria-controls="subject-table"
         size="sm"
@@ -33,6 +33,7 @@
         :fields="fields"
         :per-page="perPage"
         :current-page="currentPage"
+        :filter="filter"
         hover
         striped
         bordered
@@ -95,7 +96,7 @@ export default {
     return {
       currentPage: 1,
       perPage: 15,
-      rows: 100,
+      rows: 1,
       filter: null,
       fields: [
         {
@@ -127,15 +128,13 @@ export default {
       ],
     }
   },
-  computed: {
-    table_rows() {
-      return this.stations.length
-    },
+  created() {
+    this.rows = this.stations.length
   },
   methods: {
     onFiltered(items) {
-      this.table.rows = items.length
-      this.table.currentPage = 1
+      this.rows = items.length
+      this.currentPage = 1
     },
   },
 }
