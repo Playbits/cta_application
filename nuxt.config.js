@@ -14,7 +14,7 @@ export default {
   },
   bootstrapVue: {
     bootstrapCSS: false, // Or `css: false`
-    bootstrapVueCSS: false // Or `bvCSS: false`
+    bootstrapVueCSS: false, // Or `bvCSS: false`
   },
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: ['@/assets/scss/main.scss'],
@@ -43,7 +43,7 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
-    'bootstrap-vue/nuxt'
+    'bootstrap-vue/nuxt',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
