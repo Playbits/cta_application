@@ -6,7 +6,7 @@
         <hr />
       </b-col>
 
-      <b-col lg="12">
+      <b-col lg="12" v-if="train_arrivals">
         <h2 class="text-center">
           Showing all train Stops and arrival for {{ train_arrivals[0].staNm }}
         </h2>
@@ -22,15 +22,19 @@
               <td>{{ i + 1 }}</td>
               <td>{{ arrival.destNm }}</td>
               <td>{{ arrival.stpDe }}</td>
-              <td>{{ arrival.arrT }}</td>
+              <td>{{ format_date(arrival.arrT) }}</td>
             </tr>
           </tbody>
         </table>
+      </b-col>
+      <b-col lg="12" v-else>
+        <b-alert variant="danger" show> No train found for this route </b-alert>
       </b-col>
     </b-row>
   </div>
 </template>
 <script>
+import moment from 'moment'
 export default {
   async asyncData({ $axios, params, query, req, res }) {
     const data = {
@@ -45,6 +49,13 @@ export default {
         '&outputType=json'
     )
     return { train_arrivals: response.ctatt.eta }
+  },
+  methods: {
+    format_date(date) {
+      const formatted = moment(date).format('llll')
+      const fromNow = moment(date).fromNow()
+      return formatted + ' | | ' + fromNow
+    },
   },
 }
 </script>
